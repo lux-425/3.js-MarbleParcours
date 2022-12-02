@@ -1,14 +1,14 @@
-import './style.css'
+import './style.css';
 
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom/client';
 
-import { Canvas } from '@react-three/fiber'
-import { KeyboardControls } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber';
+import { KeyboardControls } from '@react-three/drei';
 
-import Experience from './Experience.js'
+import Experience from './Experience.js';
+import Interface from './Interface.js';
 
-
-const root = ReactDOM.createRoot(document.querySelector('#root'))
+const root = ReactDOM.createRoot(document.querySelector('#root'));
 
 root.render(
   <KeyboardControls
@@ -31,5 +31,7 @@ root.render(
     >
       <Experience />
     </Canvas>
+
+    <Interface />
   </KeyboardControls>
 );
