@@ -9,7 +9,7 @@ import * as THREE from 'three';
 export default function Player() {
   const [subscribeKeys, getKeys] = useKeyboardControls();
 
-  const [smoothedCameraPosition] = useState(() => new THREE.Vector3());
+  const [smoothedCameraPosition] = useState(() => new THREE.Vector3(10,10,10));
   const [smoothedCameraTarget] = useState(() => new THREE.Vector3());
 
   const body = useRef();
