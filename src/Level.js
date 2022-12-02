@@ -179,7 +179,7 @@ export function BlockEnd({ position = [0, 0, 0] }) {
       <mesh
         geometry={boxGeometry}
         material={floor1Material}
-        position={[0, 0.1, 0]}
+        position={[0, 0.0, 0]}
         scale={[4, 0.2, 4]}
         receiveShadow
       />
