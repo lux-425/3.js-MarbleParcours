@@ -5,7 +5,8 @@ import { subscribeWithSelector } from 'zustand/middleware';
 export default create(
   subscribeWithSelector((set) => {
     return {
-      blocksCount: 3,
+      blocksCount: 10,
+      blocksSeed: 0,
 
       /**
        * Phases
@@ -14,7 +15,8 @@ export default create(
 
       start: () => {
         set((state) => {
-          if (state.phase === 'ready') return { phase: 'playing', startTime: Date.now() };
+          if (state.phase === 'ready')
+            return { phase: 'playing', startTime: Date.now() };
 
           return {};
         });
@@ -23,7 +25,7 @@ export default create(
       restart: () => {
         set((state) => {
           if (state.phase === 'playing' || state.phase === 'ended')
-            return { phase: 'ready' };
+            return { phase: 'ready', blocksSeed: Math.random() };
 
           return {};
         });
@@ -31,7 +33,8 @@ export default create(
 
       end: () => {
         set((state) => {
-          if (state.phase === 'playing') return { phase: 'ended', endTime: Date.now() };
+          if (state.phase === 'playing')
+            return { phase: 'ended', endTime: Date.now() };
 
           return {};
         });
