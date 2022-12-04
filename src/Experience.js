@@ -14,7 +14,7 @@ export default function Experience() {
 
   return (
     <>
-      <color args={['#fff0ff']} attach='background' />
+      <color args={['#202555']} attach='background' />
 
       <Physics>
         {/* <Debug /> */}
