@@ -4,6 +4,7 @@ import { Physics, Debug } from '@react-three/rapier';
 import Lights from './Lights.js';
 import { Level } from './Level.js';
 import Player from './Player.js';
+import Effects from './Effects.js';
 
 import useGame from './stores/useGame.js';
 
@@ -13,6 +14,8 @@ export default function Experience() {
 
   return (
     <>
+      <color args={['#fff0ff']} attach='background' />
+
       <Physics>
         {/* <Debug /> */}
 
@@ -21,6 +24,8 @@ export default function Experience() {
         <Level count={blocksCount} seed={blocksSeed} />
         <Player />
       </Physics>
+
+      <Effects />
     </>
   );
 }
